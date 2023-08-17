@@ -1,0 +1,35 @@
+{% extends 'partials/base.html' %}
+<title>{% block title %}SignUp Page{% endblock title %}</title>
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    .cover{
+        background: url('/media/banner.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }   
+</style>
+    <div class="cover">
+    <div class="container">
+        <div class="row mt-5 pt-5">
+            <div class="col-md-5 offset-md-6">
+                <div class="card my-3 shadow">
+                    <div class="card-body">
+                        <h4>Sign Up Page</h4>
+                        <hr>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <input class="btn btn-primary btn-block" type="submit" value="SignUp">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+{% endblock%}
+

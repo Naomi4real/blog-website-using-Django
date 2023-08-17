@@ -1,0 +1,1 @@
+web gunicorn postScriber.wsgi:application --log-file -
